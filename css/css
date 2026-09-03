@@ -1,0 +1,23 @@
+1. What is CSS?
+Answer:
+CSS stands for Cascading Style Sheets. It is used to style and design HTML webpages.
+
+2. Why do we use CSS?
+Answer:
+We use CSS to make webpages attractive and user-friendly. It is used to control colors, fonts, spacing, layout, and positioning.
+
+3. What are the three types of CSS?
+Answer:
+There are three types of CSS:
+
+Inline CSS
+Internal CSS
+External CSS
+4. Which CSS type is preferred for large projects?
+Answer:
+External CSS is preferred for large projects because it is reusable, easy to maintain, and keeps HTML and CSS separate.
+
+5. What does Cascading mean in CSS?
+Answer:
+Cascading means when multiple CSS rules apply to the same element, CSS decides which rule should be applied based on priority, specificity, and order.
+
