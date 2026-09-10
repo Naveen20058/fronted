@@ -1,0 +1,39 @@
+.parent {
+    width: 500px;
+    height: 300px;
+    background-color: lightgray;
+    border: 3px solid black;
+
+    position: relative;
+}
+
+.box {
+    width: 100px;
+    height: 60px;
+    background-color: skyblue;
+    border: 2px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box1 {
+    position: relative;
+    left: 50px;
+    top: 30px;
+}
+
+.box2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: lightgreen;
+}
+
+.box3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: orange;
+}
