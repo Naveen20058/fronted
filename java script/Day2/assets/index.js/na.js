@@ -1,0 +1,10 @@
+let name = "naveen";
+let age = 22;
+let city = "chennai";
+let cours = "javascript";
+let mark = 80;
+console.log(name);
+console.log(age);
+console.log(city);
+console.log(cours);
+console.log(mark);
