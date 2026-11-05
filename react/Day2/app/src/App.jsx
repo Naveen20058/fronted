@@ -1,11 +1,11 @@
 import Student from './Student.jsx';
 
 const App = () => {
-  return (
+  return (<>
     <div>
       <Student />
     </div>
-  );
+  </>);
 };
 
 export default App;

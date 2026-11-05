@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Task Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #0b1329;
+      color: #ffffff;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center p-4 sm:p-8">
+
+  <!-- ==================== HOME PAGE ==================== -->
+  <div id="homePage" class="w-full max-w-5xl transition-all duration-300">
+    <!-- Header -->
+    <header class="text-center my-8">
+      <h1 class="text-3xl sm:text-4xl font-bold mb-2 tracking-wide">My Task Portal</h1>
+      <p class="text-gray-300 text-sm sm:text-base">Choose a subject to explore its tasks</p>
+    </header>
+
+    <!-- Cards Grid -->
+    <main class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+      <!-- HTML Card -->
+      <div class="bg-[#132247] border border-[#1e3469] rounded-xl p-6 flex flex-col justify-between shadow-lg hover:border-sky-400 transition-all">
+        <div>
+          <h2 class="text-xl font-bold mb-2">HTML</h2>
+          <p class="text-gray-300 text-sm mb-6">Learn structure, semantic tags, and build pages.</p>
+        </div>
+        <button onclick="showSubject('HTML')" class="w-fit bg-[#00a6ff] hover:bg-sky-400 text-white font-medium px-5 py-2 rounded-lg text-sm transition-colors">
+          View Tasks
+        </button>
+      </div>
+
+      <!-- CSS Card -->
+      <div class="bg-[#132247] border border-[#1e3469] rounded-xl p-6 flex flex-col justify-between shadow-lg hover:border-sky-400 transition-all">
+        <div>
+          <h2 class="text-xl font-bold mb-2">CSS</h2>
+          <p class="text-gray-300 text-sm mb-6">Style your pages with colors, layouts, and effects.</p>
+        </div>
+        <button onclick="showSubject('CSS')" class="w-fit bg-[#00a6ff] hover:bg-sky-400 text-white font-medium px-5 py-2 rounded-lg text-sm transition-colors">
+          View Tasks
+        </button>
+      </div>
+
+      <!-- JavaScript Card -->
+      <div class="bg-[#132247] border border-[#1e3469] rounded-xl p-6 flex flex-col justify-between shadow-lg hover:border-sky-400 transition-all">
+        <div>
+          <h2 class="text-xl font-bold mb-2">JavaScript</h2>
+          <p class="text-gray-300 text-sm mb-6">Add interactivity and logic to your projects.</p>
+        </div>
+        <button onclick="showSubject('JavaScript')" class="w-fit bg-[#00a6ff] hover:bg-sky-400 text-white font-medium px-5 py-2 rounded-lg text-sm transition-colors">
+          View Tasks
+        </button>
+      </div>
+
+      <!-- Bootstrap Card -->
+      <div class="bg-[#132247] border border-[#1e3469] rounded-xl p-6 flex flex-col justify-between shadow-lg hover:border-sky-400 transition-all">
+        <div>
+          <h2 class="text-xl font-bold mb-2">Bootstrap</h2>
+          <p class="text-gray-300 text-sm mb-6">Quickly design responsive layouts with Bootstrap.</p>
+        </div>
+        <button onclick="showSubject('Bootstrap')" class="w-fit bg-[#00a6ff] hover:bg-sky-400 text-white font-medium px-5 py-2 rounded-lg text-sm transition-colors">
+          View Tasks
+        </button>
+      </div>
+
+      <!-- Tailwind Card -->
+      <div class="bg-[#132247] border border-[#1e3469] rounded-xl p-6 flex flex-col justify-between shadow-lg hover:border-sky-400 transition-all">
+        <div>
+          <h2 class="text-xl font-bold mb-2">Tailwind</h2>
+          <p class="text-gray-300 text-sm mb-6">Utility-first CSS framework for modern design.</p>
+        </div>
+        <button onclick="showSubject('Tailwind')" class="w-fit bg-[#00a6ff] hover:bg-sky-400 text-white font-medium px-5 py-2 rounded-lg text-sm transition-colors">
+          View Tasks
+        </button>
+      </div>
+
+      <!-- React Card -->
+      <div class="bg-[#132247] border border-[#1e3469] rounded-xl p-6 flex flex-col justify-between shadow-lg hover:border-sky-400 transition-all">
+        <div>
+          <h2 class="text-xl font-bold mb-2">React</h2>
+          <p class="text-gray-300 text-sm mb-6">Build dynamic user interfaces with reusable components.</p>
+        </div>
+        <button onclick="showSubject('React')" class="w-fit bg-[#00a6ff] hover:bg-sky-400 text-white font-medium px-5 py-2 rounded-lg text-sm transition-colors">
+          View Tasks
+        </button>
+      </div>
+    </main>
+  </div>
+
+
+  <!-- ==================== TASKS DETAIL PAGE ==================== -->
+  <div id="tasksPage" class="hidden w-full max-w-4xl transition-all duration-300">
+    <!-- Header -->
+    <header class="text-center my-6">
+      <h1 id="subjectTitle" class="text-3xl sm:text-4xl font-bold mb-2 tracking-wide">HTML Tasks</h1>
+      <p class="text-gray-300 text-sm sm:text-base">Select a day to open its task output.</p>
+    </header>
+
+    <!-- Navigation Back Link -->
+    <div class="mb-6">
+      <button onclick="showHome()" class="text-white hover:underline text-sm font-semibold inline-flex items-center gap-1">
+        Back to Task Portal
+      </button>
+    </div>
+
+    <!-- Days Accordion List -->
+    <main id="accordionContainer" class="space-y-4">
+      <!-- Generated dynamically in JS -->
+    </main>
+  </div>
+
+
+  <!-- JavaScript Functionality -->
+  <script>
+    const sampleDays = [
+      { day: 1, open: true, tasks: ["Story", "Basic Tags Practice"] },
+      { day: 2, open: false, tasks: ["Forms & Inputs", "Table Creation"] },
+      { day: 3, open: false, tasks: ["Semantic Elements", "Media Embeds"] },
+      { day: 4, open: false, tasks: ["HTML5 Canvas", "SVG Graphics"] },
+      { day: 5, open: false, tasks: ["Final HTML Capstone Project"] }
+    ];
+
+    function showSubject(title) {
+      document.getElementById('homePage').classList.add('hidden');
+      document.getElementById('tasksPage').classList.remove('hidden');
+      document.getElementById('subjectTitle').innerText = title + ' Tasks';
+      renderAccordion();
+    }
+
+    function showHome() {
+      document.getElementById('tasksPage').classList.add('hidden');
+      document.getElementById('homePage').classList.remove('hidden');
+    }
+
+    function renderAccordion() {
+      const container = document.getElementById('accordionContainer');
+      container.innerHTML = '';
+
+      sampleDays.forEach((item, index) => {
+        const dayBox = document.createElement('div');
+        dayBox.className = "bg-[#132247] border border-[#1e3469] rounded-xl overflow-hidden shadow-lg";
+
+        const headerBtn = document.createElement('button');
+        headerBtn.className = "w-full text-left px-6 py-4 font-semibold text-lg flex items-center gap-3 hover:bg-[#182c5c] transition-colors focus:outline-none";
+        headerBtn.innerHTML = `
+          <span class="text-xs transition-transform duration-200 ${item.open ? 'rotate-90' : ''}">&#9654;</span>
+          <span>Day ${item.day}</span>
+        `;
+
+        const contentDiv = document.createElement('div');
+        contentDiv.className = `px-6 pb-4 pt-1 space-y-2 ${item.open ? 'block' : 'hidden'}`;
+
+        item.tasks.forEach(task => {
+          const taskBtn = document.createElement('button');
+          taskBtn.className = "w-full text-left bg-[#00a6ff] hover:bg-sky-400 text-white font-medium py-3 px-5 rounded-xl text-base transition-colors shadow";
+          taskBtn.innerText = task;
+          taskBtn.onclick = () => alert(`Opening ${task} output...`);
+          contentDiv.appendChild(taskBtn);
+        });
+
+        headerBtn.onclick = () => {
+          item.open = !item.open;
+          renderAccordion();
+        };
+
+        dayBox.appendChild(headerBtn);
+        dayBox.appendChild(contentDiv);
+        container.appendChild(dayBox);
+      });
+    }
+  </script>
+</body>
+</html>
