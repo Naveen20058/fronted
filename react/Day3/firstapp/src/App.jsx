@@ -1,10 +1,15 @@
-import Butten from "./assets/components/Butten"
-const App =()=>{
-  return(<>
-  
-   <h1>THIS IS REACT</h1>
-   <button/>
+import Navbar from "./component/Navbar";
+import Hero from "./component/Hero";
+import Footer from "./component/Footer";
 
-  </>)
-}
-export default App
+const App = () => {
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <Footer />
+    </>
+  );
+};
+
+export default App;
