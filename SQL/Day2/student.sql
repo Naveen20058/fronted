@@ -1,3 +1,5 @@
+create database nav;
+use nav;
 create table students(
 student_id INT PRIMARY KEY,
 student_name VARCHAR(100) NOT NULL,
